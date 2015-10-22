@@ -21,9 +21,13 @@ function build(){
 	cd $OPWD
 	HASH=$(ls app.*.js | sed 's,app\.\(.*\)\.js,\1,g' )
 }
-rm -f ./${BASE}.*.{js,js.map}
+function index(){
+	cp $DIR/public/index.html .
+	sed -i "s,\"app.js\",app.${HASH}.js," index.html
+}
+rm -f ./app.*.{js,js.map}
 build  && \
-sed "s,\(src=\"\).*\(\.js\"\),\1app\.${HASH}\2,"<$DIR/public/index.html>index.html
+index && \
 check
 read -p "Do you want to push[y|Y]" dp;
 case $dp in
