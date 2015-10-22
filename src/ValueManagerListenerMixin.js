@@ -1,5 +1,5 @@
 "use strict";
-var warnings = require('react/lib/warning');
+var warning = require('fbjs/lib/warning');
 
 /**
  *

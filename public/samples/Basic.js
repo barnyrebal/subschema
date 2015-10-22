@@ -3,11 +3,11 @@ module.exports = {
     schema: {
         "schema": {
             "title": {"type": "Select", "options": ["Mr", "Mrs", "Ms"]},
-            "name": {type: "Text", validators: ['required']},
-            "age":{type:'Number'}
+            "name": {type: "Text", title:"First Name", validators: ['required']},
+            "age": {type: 'Number'}
 
         },
-        "fieldsets": [{"legend": "Name", "fields": ["title", "name","age"]}]
+        "fieldsets": [{"legend": "Name", "fields": ["title", "name", "age"]}]
     },
     data: {
         title: 'Mrs',

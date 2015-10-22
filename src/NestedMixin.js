@@ -3,7 +3,7 @@ var tu = require('./tutils');
 var Editor = require('./Editor');
 var ValueManager = require('./ValueManager');
 var LoaderMixin = require('./LoaderMixin');
-var warning = require("react/lib/warning");
+var warning = require("fbjs/lib/warning");
 var noTypeInfo;
 if ("production" !== process.env.NODE_ENV) {
     noTypeInfo = function (f) {

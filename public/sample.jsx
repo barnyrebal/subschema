@@ -1,15 +1,11 @@
-var React = require('react');
+var React = require('../src/react');
 var SampleMgr = require('./SampleMgr.jsx');
 var SampleNav = require('./SampleNav.jsx');
-var Router = require('react-router');
-var { RouteHandler, Link } = Router;
+import { RouteHandler, Link, State } from 'react-router'
 
 
 var Sample = React.createClass({
 
-    contextTypes: {
-        router: React.PropTypes.func.isRequired
-    },
     getInitialState(){
         return {
             loadData: false,
@@ -42,7 +38,7 @@ var Sample = React.createClass({
         return 'list-group-item ' + (name === active ? 'active' : '');
     },
     render() {
-        var params = this.context.router.getCurrentParams(), setupCls = this.setupCls;
+        var params = this.props.params, setupCls = this.setupCls;
         var setup = params.setup;
         return (
 
@@ -86,7 +82,7 @@ var Sample = React.createClass({
                         </div>
                     </div>
                     <div className="col-md-10">
-                        <RouteHandler {...params}/>
+                        {React.cloneElement(this.props.children, params)}
                     </div>
                 </div>
             </div>

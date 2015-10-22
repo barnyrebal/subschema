@@ -10,9 +10,9 @@ var SampleNav = React.createClass({
         var clzName = this.clzName;
         var sample = this.props.activeSample;
         return this.props.samples.map(function (item) {
-            return (
-                <Link to="item" className={clzName(item.name, sample)} key={item.name}
-                      params={{sample: item.name}}>{item.name}</Link>
+            /*                <Link to="item" className={clzName(item.name, sample)} key={item.name}
+             params={{sample: item.name}}>{item.name}</Link>*/
+            return (<Link to={`/${item.name}`}  className={clzName(item.name, sample)} key={item.name}>{item.name}</Link>
             );
         });
     },

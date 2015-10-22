@@ -48,6 +48,9 @@ function config(filename, externals, alias) {
                         '~/node_modules/subschema-builder'
 
                     ],
+                    excludes:[
+                        /-test.js(x)?/
+                    ],
                     loaders: ['babel-loader?stage=0&externalHelpers&optional=runtime']
                 },
                 {test: /\.(png|jpe?g|mpe?g[34]?|gif)$/, loader: 'url-loader?limit=100000'},

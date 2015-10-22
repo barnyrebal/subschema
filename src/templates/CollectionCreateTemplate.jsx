@@ -1,7 +1,6 @@
 var React = require('../react');
 var Editor = require('../Editor');
 var CreateItemMixin = require('../types/CreateItemMixin');
-var ReactCSSTransitionGroup = require('react/addons').addons.CSSTransitionGroup;
 var Content = require('../types/Content.jsx');
 require('../styles/transitions.less');
 var CollectionCreateTemplate = React.createClass({
