@@ -25,7 +25,7 @@ function index(){
 	cp $DIR/public/index.html .
 	sed -i "s,\"app.js\",app.${HASH}.js," index.html
 }
-rm -f ./app.*.{js,js.map}
+rm -f ./app.*.{js,js.map} 
 build  && \
 index && \
 check
