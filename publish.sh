@@ -17,7 +17,7 @@ function push(){
 }
 function build(){
 	cd $DIR
-	npm run build-demo
+	DEMO_DIR=$OPWD npm run build-demo
 	cd $OPWD
 	HASH=$(ls app.*.js | sed 's,app\.\(.*\)\.js,\1,g' )
 }
@@ -31,6 +31,6 @@ index && \
 check
 read -p "Do you want to push[y|Y]" dp;
 case $dp in
-	y|Y) push; break;;
-	n|N) echo "Don't forget to publish"; exit 0;;
+	y|Y) push;;
+	*) echo "Don't forget to publish"; exit 0;;
 esac
